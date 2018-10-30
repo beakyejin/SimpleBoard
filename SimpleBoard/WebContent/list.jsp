@@ -3,6 +3,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% List<BoardVO> list = (List<BoardVO>)request.getAttribute("list"); %>
+<script type="text/javascript">
+	function clkTr(board_no) {
+		var form = document.createElement("form");
+		
+		form.method = "POST";
+		form.action = "detail";
+		
+		var element1 = document.createElement("input");
+		element1.value = board_no;
+		element1.name = "no";
+		
+		form.appendChild(element1);
+		document.body.appendChild(form);
+		form.submit();
+	}
+</script>
 <section>
 	<div class="tbl_list">
 		<table>
@@ -22,8 +38,10 @@
 			for(BoardVO vo : list) {%>
 			<tr>
 				<td><%=vo.getBoard_no() %></td>
-				<td><a href="detail?no=<%=vo.getBoard_no()%>">
-						<%=vo.getBoard_title() %></a></td>
+				<%-- <td><a href="detail?no=<%=vo.getBoard_no()%>">
+						<%=vo.getBoard_title() %></a></td> --%>
+				<td onclick="clkTr(<%=vo.getBoard_no()%>)">
+						<%=vo.getBoard_title() %></td>
 				<td><%=vo.getRegdate() %></td>
 				<td><%=vo.getCnt() %></td>
 			</tr>

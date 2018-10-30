@@ -17,6 +17,10 @@
 			alert("제목을 입력해주세요.");
 			frm.board_title.focus();
 			return false;
+		}else if(frm.board_title.value.length >= 10){
+			alert("10자 이하로 입력해주세요.");
+			frm.board_title.focus();
+			return false;
 		}else if(frm.board_content.value == ""){
 			alert("내용을 입력해주세요.");
 			frm.board_content.focus();

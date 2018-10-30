@@ -17,7 +17,7 @@ section { flex: 9; margin: 10px; overflow: auto; }
 footer { flex: 1; background-color: gray; display: flex; align-items: center; justify-content: center;}
 
 .tbl_write, .tbl_list { width: 100%; padding: 10px; display: flex; justify-content: center; }
-.tbl_write table, .tbl_list table { width: 100%; }
+.tbl_write table, .tbl_list table, .tbl_detail table { width: 100%; }
 table, tr, th, td { border: 1px solid #00000026; border-collapse: collapse; padding:15px; }
 .tbl_write th { width: 15%; }
 .tbl_write td { width: 85%; }
@@ -25,3 +25,14 @@ table, tr, th, td { border: 1px solid #00000026; border-collapse: collapse; padd
 
 input[type="text"], input[type="date"] { width: 300px; }
 textarea { width: 300px; height: 150px; }
+
+.tbl_detail { width: 100%; float: left; margin-bottom: 30px;}
+.tbl_detail .btn { padding-top: 10px; float: right; }
+
+.cmt_div { width: 100%; float: right; background-color: #80808029; }
+.cmt_text { width: 100%; padding: 15px; }
+.cmt_text form { width: 100%;}
+.cmt_text textarea { width: 90%; height: 80px; float:left; margin-right: 5px;}
+.cmt_text input[type="submit"] { width: 9%; height: 80px; }
+
+.cmt_list table { width: 100%; }
