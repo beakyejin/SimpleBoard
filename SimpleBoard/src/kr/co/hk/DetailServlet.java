@@ -21,7 +21,8 @@ public class DetailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("=====detail [get]=====");
 		
-		int board_no = Integer.parseInt(request.getParameter("no"));
+		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		System.out.println("board_no" + board_no);
 		
 		//데이터 들고오기
 		BoardVO vo = BoardDAO.getBoardDetail(board_no);
@@ -36,12 +37,12 @@ public class DetailServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("=====detail [post]=====");
 		
-		int board_no = Integer.parseInt(request.getParameter("no"));
+		int board_no = Integer.parseInt(request.getParameter("board_no"));
 		
 		//조회수 +1
 		BoardDAO.updateCNT(board_no);
 		
-		response.sendRedirect("detail?no=" + board_no);
+		response.sendRedirect("detail?board_no=" + board_no);
 	}
 
 }

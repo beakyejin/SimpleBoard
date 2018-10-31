@@ -39,37 +39,37 @@
 	
 </script>
 <section>
-	<form name="frm" action="write" method="post" onsubmit="return clkSubmit();">
+	<form name="frm" action="mod" method="post" onsubmit="return clkSubmit();">
 		<div class="tbl_write">
 			<table>
 				<tr>
 					<th>번호</th>
 					<td>
-						<input type="text" name="board_no" value="${maxNo}" readonly>
+						<input type="text" name="board_no" value="${vo.board_no}" readonly>
 					</td>
 				</tr>
 				<tr>
 					<th>제목</th>
 					<td>
-						<input type="text" name="board_title">
+						<input type="text" name="board_title" value="${vo.board_title}">
 					</td>
 				</tr>
 				<tr>
 					<th>내용</th>
 					<td>
-						<textarea name="board_content"></textarea>
+						<textarea name="board_content">${vo.board_content}</textarea>
 					</td>
 				</tr>
 				<tr>
 					<th>등록 날짜</th>
 					<td>
-						<input type="date" name="regdate">
+						<input type="date" name="regdate" value="${vo.regdate}">
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<div class="tbl_btn">
-							<input type="submit" value="등록">
+							<input type="submit" value="수정">
 							<input type="button" value="조회" onclick="clkFind();">
 						</div>
 					</td>

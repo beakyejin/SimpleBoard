@@ -7,6 +7,17 @@ public class BoardVO {
 	private String regdate;
 	private int cnt;
 	
+	/*join 테이블 - 댓글 수*/
+	private int comment_cnt;
+	
+	public int getComment_cnt() {
+		return comment_cnt;
+	}
+	public void setComment_cnt(int comment_cnt) {
+		this.comment_cnt = comment_cnt;
+	}
+	/*==========================================*/
+	
 	public int getBoard_no() {
 		return board_no;
 	}

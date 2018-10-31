@@ -19,12 +19,27 @@
 	function delCmt(comment_no, board_no) {
 		location.href="cmtDelete?comment_no="+comment_no+"&board_no="+board_no;
 	}
+	
+	function deleteBoard(board_no) {
+		if("${cmtList.size()}" > 0){
+			alert("댓글이 남아있습니다.");
+			return false;
+		}
+		
+		location.href="delete?board_no="+board_no;
+	}
+	
+	function mod(board_no) {
+		location.href="mod?board_no="+board_no;
+	}
+	
 </script>
 <section>
 	<div class="tbl_detail">
 		<%if("${vo}" != null){ %>
 		<table>
 			<colgroup>
+				<col>
 				<col>
 				<col width="45%">
 				<col>
@@ -33,6 +48,7 @@
 				<col>
 			</colgroup>
 			<tr>
+				<td>${vo.board_no}</td>
 				<th>제목</th>
 				<td>${vo.board_title}</td>
 				<th>작성날짜</th>
@@ -41,7 +57,7 @@
 				<td>${vo.cnt}</td>
 			</tr>
 			<tr>
-				<td colspan="6">
+				<td colspan="7">
 					${vo.board_content}
 				</td>
 			</tr>
@@ -49,8 +65,8 @@
 		<%} %>
 		<div class="btn">
 			<input type="button" value="목록" onclick="location.href='list'">
-			<input type="button" value="수정" onclick="location.href='mod'">
-			<input type="button" value="삭제" onclick="location.href='delete'">
+			<input type="button" value="수정" onclick="mod(${vo.board_no})">
+			<input type="button" value="삭제" onclick="deleteBoard(${vo.board_no});">
 		</div>
 	</div>
 	<div class="cmt_div">
@@ -65,7 +81,7 @@
 			<table>
 				<colgroup>
 					<col>
-					<col width="60%">
+					<col width="75%">
 					<col>
 					<col>
 				</colgroup>
